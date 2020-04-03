@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<!-- 아이디들을 넣었음.
+id에 ctrl+1 하면 add 가 컨트롤러자바파일에 추가된다.
+자바파일 중 "kr.or.ddit.basic.ComboGugudanController" 이 파일이랑 연동됨.
+fxml.loader 가 생성됐을 때 여기서만들어진 객체들을 자바파일에있는  fxml어노테이션이 붙어있는 곳에 찾아가서 주입시킴.
+ -->
+
+
+<BorderPane fx:controller="kr.or.ddit.basic.ComboGugudanController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <top>
+      <HBox spacing="10.0" BorderPane.alignment="CENTER">
+         <children>
+            <ComboBox fx:id="cmbDan" prefWidth="150.0" />
+            <Button fx:id="btnDan" mnemonicParsing="false" text="출력" onAction="#btnDanClicked" /> <!-- onaction에 ctrl+1 두개중 아래거 -->
+         </children>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </HBox>
+   </top>
+   <center>
+      <TextArea fx:id="txtResult" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+   </center>
+</BorderPane>

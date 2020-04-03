@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="486.0" prefWidth="519.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kr.or.ddit.member.MemberController">
+   <children>
+      <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="486.0" prefWidth="519.0">
+         <children>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Text fill="#0a0a0a" strokeType="OUTSIDE" strokeWidth="0.0" text="회원관리">
+                     <font>
+                        <Font name="System Bold" size="35.0" />
+                     </font>
+                  </Text>
+               </children>
+            </HBox>
+            <HBox prefHeight="52.0">
+               <children>
+                  <Button fx:id="addBtn" mnemonicParsing="false" onAction="#addBtnClicked" text="등록">
+                     <HBox.margin>
+                        <Insets bottom="10.0" left="50.0" right="20.0" top="10.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="editBtn" mnemonicParsing="false" onAction="#editBtnClicked" text="수정">
+                     <HBox.margin>
+                        <Insets bottom="10.0" right="20.0" top="10.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="delBtn" mnemonicParsing="false" onAction="#delBtnClicked" text="삭제">
+                     <HBox.margin>
+                        <Insets bottom="10.0" top="10.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+            <TableView fx:id="tbView" prefHeight="252.0" prefWidth="519.0">
+               <columns>
+                  <TableColumn fx:id="idCol" prefWidth="114.0" text="아이디" />
+                  <TableColumn fx:id="nameCol" prefWidth="102.0" text="이름" />
+                  <TableColumn fx:id="telCol" prefWidth="148.0" text="전화번호" />
+                  <TableColumn fx:id="addrCol" prefWidth="154.0" text="주소" />
+               </columns>
+            </TableView>
+         </children>
+      </VBox>
+      <Pagination fx:id="pagnation" layoutY="152.0" prefHeight="334.0" prefWidth="519.0" />
+   </children>
+</AnchorPane>

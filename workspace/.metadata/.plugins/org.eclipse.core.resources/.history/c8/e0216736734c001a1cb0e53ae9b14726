@@ -1,0 +1,12 @@
+package kr.or.ddit.creational.builder;
+
+public class Wrapper implements Packing {
+// 포장지. packing을할때 wrapper로 감쌌다.
+	
+	@Override
+	public String pack() {
+		
+		return "Wrapper";
+	}
+
+}

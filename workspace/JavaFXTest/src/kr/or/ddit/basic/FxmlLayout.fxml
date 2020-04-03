@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<HBox spacing="50.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8">
+	<!-- TODO Add Nodes -->
+	<children>
+		<TextField prefWidth="200" />
+		<Button text="확   인" />
+	</children>
+	
+	<padding>
+		<Insets bottom="10" left="10" right="10" top="10" />
+	</padding>
+	
+	<!-- scenebuilder 를 다운받아봅니다. -->
+	<!-- 디폴트로 다운로드받으면 바탕화면에 손가락생김.
+		 신빌더 켠 후 오픈해서 읽어도 되고 fxml파일 끌어와도된다.-->
+	
+</HBox>

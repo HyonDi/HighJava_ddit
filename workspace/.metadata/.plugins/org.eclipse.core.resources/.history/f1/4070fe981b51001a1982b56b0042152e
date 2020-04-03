@@ -1,0 +1,5 @@
+# SqlMapConfig.properties
+driver=oracle.jdbc.driver.OracleDriver
+url=jdbc:oracle:thin:@192.168.205.8:1521/xe
+username=khj
+password=java

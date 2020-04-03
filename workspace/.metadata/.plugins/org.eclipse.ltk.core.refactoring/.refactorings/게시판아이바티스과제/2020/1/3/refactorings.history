@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;게시판아이바티스과제/src/게시판아이바티스과제/member.xml&apos; to &apos;게시판.xml&apos;" description="Rename resource &apos;member.xml&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/게시판아이바티스과제/member.xml" name="게시판.xml" stamp="1579092158357" updateReferences="true"/>
+</session>

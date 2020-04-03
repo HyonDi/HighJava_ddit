@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+
+<VBox fx:controller="kr.or.ddit.basic.member_pr_Controller" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="550.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <Label text="   회원 ID : ">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </Label>
+            <TextField fx:id="txtId" prefWidth="200.0" />
+         </children>
+         <VBox.margin>
+            <Insets top="15.0" />
+         </VBox.margin>
+      </HBox>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <Label text="회원 이름 : " />
+            <TextField fx:id="txtName" prefWidth="200.0" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <Label text="회원 전화 : " />
+            <TextField fx:id="txtTel" prefWidth="200.0" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <Label text="회원 주소 : " />
+            <TextField fx:id="txtAddr" prefWidth="200.0" />
+         </children>
+         <VBox.margin>
+            <Insets bottom="10.0" />
+         </VBox.margin>
+      </HBox>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="15.0">
+         <children>
+            <Button fx:id="btnAdd" mnemonicParsing="false" prefHeight="35.0" prefWidth="70.0" text="추 가" onAction="#btnAddClicked"/>
+            <Button fx:id="btnEdit" mnemonicParsing="false" prefHeight="35.0" prefWidth="70.0" text="수 정" onAction="#btnEditClicked"/>
+            <Button fx:id="btnDel" mnemonicParsing="false" prefHeight="35.0" prefWidth="70.0" text="삭 제" onAction="#btnDelClicked"/>
+            <Button fx:id="btnSubmit" mnemonicParsing="false" prefHeight="35.0" prefWidth="70.0" text="확 인" onAction="#btnSubmitClicked"/>
+            <Button fx:id="btnCancel" mnemonicParsing="false" prefHeight="35.0" prefWidth="70.0" text="취 소" onAction="#btnCancelClicked"/>
+         </children>
+      </HBox>
+      <TableView fx:id="memTableView" prefHeight="308.0" prefWidth="522.0">
+        <columns>
+          <TableColumn fx:id="memId" prefWidth="94.0" text="회원ID" />
+          <TableColumn fx:id="memName" prefWidth="127.0" text="회원이름" />
+            <TableColumn fx:id="memTel" prefWidth="140.0" text="회원전화" />
+            <TableColumn fx:id="memAddr" prefWidth="140.0" text="회원주소" />
+        </columns>
+         <VBox.margin>
+            <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+         </VBox.margin>
+      </TableView>
+   </children>
+</VBox>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+			PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+			"http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<!-- namespace 속성 : 아래에서 작성한 SQL문을 호출할 때 같이 사용된다. -->
+<sqlMap namespace="prodTest">
+
+	<select id="getCom1" resultClass="ProdVO">
+		select * from lprod
+	</select>
+	
+	<select id="getCom2" parameterClass="String" resultClass="ProdVO">
+		select * from prod where prod_lgu = #prod_lgu#
+	</select>
+	
+</sqlMap>			
+
+
+
+
+

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+			PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+			"http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<!--  namespace속성 : 아래에서 작성한SQL문을 호출할 떄 같이 사용된다. -->
+<sqlMap namespace="productTest">
+	<select id="selectpd" resultClass="pdVO">
+			select * from lprod
+
+	</select>
+	
+	<select id="selectpd2" parameterClass="String" resultClass="piVO">
+							<!-- 제품선택에 따른 상세 제품 내역 및 TableView조회 -->
+<!-- 	select prod_id, prod_name,
+	prod_lgu, prod_buyer, prod_cost,
+	prod_price, prod_sale, prod_outLine,prod.PROD_DETAIL
+	from prod, lprod d
+	where prod.prod_Lgu = d.lprod_gu
+	and lprod_nm = '#pro';	
+	 -->
+	 select * from prod where prod_lgu = #lg#
+	 
+	</select>
+</sqlMap>			
+
+
+
+
+

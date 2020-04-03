@@ -1,0 +1,5 @@
+package kr.or.ddit.client;
+
+public class RemoteClient {
+
+}

@@ -1,0 +1,47 @@
+package controller;
+
+import java.net.URL;
+import java.util.ResourceBundle;
+
+import javafx.fxml.Initializable;
+import javafx.fxml.FXML;
+import javafx.scene.chart.PieChart;
+import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
+import javafx.stage.Stage;
+import vo.ScoreVO;
+import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
+
+public class PiController implements Initializable{
+
+	@FXML PieChart pieChart;
+	@FXML Button canBtn;
+	TextField name;
+	TextField kor;
+	TextField math;
+	TextField eng;
+	
+	private ObservableList<ScoreVO> list;
+	
+	// 이부분이 왜필요한거지??
+	 	public ObservableList<ScoreVO> getList() {
+		return list;
+	}
+
+	public void setList(ObservableList<ScoreVO> list) {
+		this.list = list;
+	}
+	
+	@Override
+	public void initialize(URL location, ResourceBundle resources) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@FXML public void canBtn(ActionEvent event) {
+		Stage main = (Stage) canBtn.getScene().getWindow();
+		main.close();
+	}
+
+}

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;ibatis-2.3.4.726.jar&apos; to &apos;CollectionTest&apos;&#x0D;&#x0A;- Original project: &apos;iBatisTest누리오빠것&apos;&#x0D;&#x0A;- Destination element: &apos;CollectionTest&apos;&#x0D;&#x0A;- Original element: &apos;ibatis-2.3.4.726.jar&apos;" description="Copy file" destination="=CollectionTest" element1="ibatis-2.3.4.726.jar" files="1" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1579609051476" units="0" version="1.0"/>
+</session>

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy 2 elements to &apos;Score/src/controller&apos;&#x0D;&#x0A;- Original project: &apos;HomeWork_FX_Grade&apos;&#x0D;&#x0A;- Destination element: &apos;Score/src/controller&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     barChart.fxml&#x0D;&#x0A;     pieChart.fxml" description="Copy files" destination="=Score/src&lt;controller" element1="src/barChart.fxml" element2="src/pieChart.fxml" files="2" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1581329586910" units="0" version="1.0"/>
+</session>

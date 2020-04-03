@@ -1,0 +1,117 @@
+package kr.or.ddit.member;
+
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.ResourceBundle;
+
+import javafx.fxml.Initializable;
+import javafx.fxml.FXML;
+import javafx.scene.Node;
+import javafx.scene.control.Button;
+import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.Pagination;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
+import javafx.scene.input.MouseEvent;
+import javafx.util.Callback;
+import kr.or.ddit.member.service.MemberServiceImpl;
+import kr.or.ddit.member.vo.MemberVO;
+
+public class MemberController implements Initializable{
+
+	@FXML private Button addBtn;
+	@FXML private Button editBtn;
+	@FXML private Button delBtn;
+	@FXML private TableView<MemberVO> tbView;
+	@FXML private TableColumn<MemberVO,String> idCol;
+	@FXML private TableColumn<MemberVO,String> nameCol;
+	@FXML private TableColumn<MemberVO,String> telCol;
+	@FXML private TableColumn<MemberVO,String> addrCol;
+	@FXML private Pagination pagnation;
+
+	// 페이지네이션 변수
+	private int from, to, itemsForPage;
+	
+	// 정보 담을 그릇
+	private ObservableList<MemberVO> allTableData, currentPageData;
+	
+	@Override
+	public void initialize(URL location, ResourceBundle resources) {
+		
+		idCol.setCellValueFactory(new PropertyValueFactory<MemberVO,String>("mem_id"));
+		nameCol.setCellValueFactory(new PropertyValueFactory<MemberVO,String>("mem_name"));
+		telCol.setCellValueFactory(new PropertyValueFactory<MemberVO,String>("mem_tel"));
+		addrCol.setCellValueFactory(new PropertyValueFactory<MemberVO,String>("mem_addr"));
+		
+		//List<MemberVO> list = new ArrayList<MemberVO>();
+		//list.add(new MemberVO("qwdq","awf","asd","asfqw"));
+		
+		// 테이블뷰에 리스트 집어넣는다.
+		//tbView.setItems(allTableData);
+		
+		
+		// 서비스 객체생성하고 내용 List>list2에 담음.
+		MemberServiceImpl service = MemberServiceImpl.getInstance();
+		List<MemberVO> list2 = service.getAllMemberList(); // db에서 가져온 진짜데이터
+		
+		ObservableList<MemberVO> list = FXCollections.observableArrayList(list2);// 옵저버블에 넣어옴.
+			//옴저블리스트로 바꿈.(list2를
+		
+		// 전체 테이블 데이터 설정
+		System.out.println(allTableData.size()+"@@@@@@@@@@@@@@");
+		tbView.setItems(list);// 테이블뷰에 보이기.
+		
+		
+		allTableData = list;	//FXCollections.observableArrayList(list); //
+		itemsForPage = 5;
+		int totPageCount = allTableData.size()%itemsForPage ==0 ?allTableData.size()/itemsForPage : allTableData.size()/itemsForPage +1;
+		System.out.println(totPageCount + "!!!!!!!!!!!!!!!!!!");
+		pagnation.setPageCount(totPageCount);
+		
+		
+		pagnation.setPageFactory(new Callback<Integer, Node>() {
+			@Override
+			public Node call(Integer pageindex) {
+				from = pageindex * itemsForPage;
+				to = from + itemsForPage -1;
+				tbView.setItems(getTableViewData(from, to));
+				
+				System.out.println(tbView.getItems().size()+"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+				return tbView;
+			}
+		});
+		
+		
+		
+		
+		
+		
+	}
+	
+	private ObservableList<MemberVO> getTableViewData(int from, int to){
+		
+		// 현재 페이지의 데이터 초기화
+		currentPageData = FXCollections.observableArrayList();
+		
+		int totSize = allTableData.size();
+		for(int i = from; i <= to && i < totSize; i ++) {
+			currentPageData.add(allTableData.get(i));
+		}
+		
+		return currentPageData;
+	}
+	
+
+	@FXML public void addBtnClicked() {}
+
+	@FXML public void editBtnClicked(ActionEvent event) {}
+
+	@FXML public void delBtnClicked(ActionEvent event) {}
+
+	@FXML public void tbSelected(MouseEvent event) {}
+
+}

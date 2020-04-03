@@ -1,0 +1,94 @@
+package kr.or.ddit.rmi;
+
+import java.rmi.*;
+import java.rmi.registry.LocateRegistry;
+import java.rmi.registry.Registry;
+import java.rmi.server.*;
+
+import java.util.*;
+
+import kr.or.ddit.rmi.inf.ChatClient;
+import kr.or.ddit.rmi.inf.ChatServer;
+
+public class ChatServerImpl extends UnicastRemoteObject implements ChatServer {
+	// UnicastRemoteObject 를 상속받아야 rmi원격객체로 사용가능하다.
+	// 
+
+	// 벡터는 동기화가 되어있다.
+	//ChatClient 는 클라이언트쪽 인터페이스에있다.
+   Vector<ChatClient> clientList = new Vector<>();
+
+   // 생성자는 throws remoteException 해줘야해. 얘가 extends 한 UnicastRemoteObject얘도 throws해야하니까? 
+   public ChatServerImpl() throws RemoteException{} 
+
+   public static void main(String args[]){
+
+       try{
+
+          System.out.println("ChatServerImpl.main:creating registry");
+          
+          //System.setProperty("java.rmi.server.hostname","192.168.0.23");
+
+          ChatServerImpl Server = new ChatServerImpl();    
+          
+          Registry reg = LocateRegistry.createRegistry(8888);
+
+          reg.rebind("RMIChatServer", Server);
+    //      Naming.rebind("RMIChatServer", Server);
+
+          System.out.println("ChatServerImpl is running...");
+
+       } catch (Exception e){
+
+          System.out.println("ChatServerImpl error: " + e.getMessage());
+
+          e.printStackTrace();
+
+       }
+
+   }
+
+   public void addClient(ChatClient client, String name) throws RemoteException{
+
+       clientList.addElement(client);// 벡서에 add함.
+
+       say(name + "님이 접속하셨습니다.");
+
+       System.out.println("New Client! Number of client = " + (clientList.size()));
+
+   }
+
+   public void disconnect(ChatClient client, String name) throws RemoteException{
+
+       int i = clientList.indexOf(client);
+
+       if (i >= 0){
+
+          say(name + "님이 퇴장하셨습니다.");
+
+          clientList.removeElementAt(i);
+
+          System.out.println("A Client exited! Number of client = " + clientList.size());
+
+       }else {
+
+          System.out.println("No such a client in Server! ");
+
+       }
+
+   }
+
+   public void say(String msg) throws RemoteException {
+
+       int numOfConnect = clientList.size();
+
+       for(int i = 0; i < numOfConnect; i++){
+
+          ((ChatClient)clientList.elementAt(i)).printMessage(msg);// 서버가 클라이언트객체에있는 printMessage 를 사용했다.
+          // say호출시 00님이 접속하셨습니다. 넣엇으니 이게 모든사람들에게 출력될것이다.
+
+       }
+
+   }
+
+}

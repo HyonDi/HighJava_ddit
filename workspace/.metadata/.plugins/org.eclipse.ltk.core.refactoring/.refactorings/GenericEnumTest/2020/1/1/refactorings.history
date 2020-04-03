@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;kr.or.ddit.basic.T01_&apos; to &apos;T01_GenericTest&apos;&#x0D;&#x0A;- Original project: &apos;GenericEnumTest&apos;&#x0D;&#x0A;- Original element: &apos;kr.or.ddit.basic.T01_&apos;&#x0D;&#x0A;- Renamed element: &apos;kr.or.ddit.basic.T01_GenericTest&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;T01_&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;kr.or.ddit.basic{T01_.java[T01_" matchStrategy="1" name="T01_GenericTest" qualified="false" references="true" similarDeclarations="false" stamp="1578017395697" textual="false" version="1.0"/>
+</session>

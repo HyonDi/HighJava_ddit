@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<!-- 씬빌더로 만들 당시 페이지네이션으로 테이블뷰를 잘 감싸야한다 끝까지감싸지게 -->
+<AnchorPane fx:controller="kr.or.ddit.basic.PagingController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <TableView fx:id="tableView" prefHeight="393.0" prefWidth="600.0">
+        <columns>
+          <TableColumn fx:id="id" prefWidth="138.0" text="ID" />
+          <TableColumn fx:id="name" prefWidth="151.0" text="이름" />
+            <TableColumn fx:id="address" prefWidth="310.0" text="주소" />
+        </columns>
+      </TableView>
+      <Pagination fx:id="pagination" layoutX="-1.0" prefHeight="500.0" prefWidth="606.0" />
+   </children>
+</AnchorPane>

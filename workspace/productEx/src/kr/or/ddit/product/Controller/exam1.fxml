@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kr.or.ddit.product.Controller.examController">
+   <top>
+      <HBox prefWidth="600.0" spacing="10.0" BorderPane.alignment="CENTER">
+         <children>
+            <ComboBox fx:id="combo1"  onAction="#selectedbox1" prefWidth="150.0" />
+            <ComboBox fx:id="combo2"  onAction="#selectedbox2" prefWidth="150.0" />
+         </children>
+         <padding>
+            <Insets left="219.0" />
+         </padding>
+      </HBox>
+   </top>
+   <center>
+      <TableView fx:id="tableView" prefHeight="263.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+        <columns>
+          <TableColumn fx:id="colid" minWidth="-Infinity" prefWidth="87.0" text="PROD_ID" />
+          <TableColumn fx:id="colName" minWidth="-Infinity" prefWidth="154.0" text="PROD_NAME" />
+            <TableColumn fx:id="colLgu" minWidth="-Infinity" prefWidth="68.0" text="PROD_LGU" />
+            <TableColumn fx:id="colBuyer" minWidth="-Infinity" prefWidth="97.0" text="PROD_BUYER" />
+            <TableColumn fx:id="colCost" minWidth="-Infinity" prefWidth="105.0" text="PROD_COST" />
+            <TableColumn fx:id="colSale" minWidth="-Infinity" prefWidth="90.0" text="PROD_SALE" />
+            <TableColumn fx:id="colOutlien" minWidth="-Infinity" prefWidth="97.0" text="PROD_OUTLIEN" />
+            <TableColumn fx:id="colDetail" minWidth="-Infinity" prefWidth="101.0" text="PROD_DETAIL" />
+        </columns>
+      </TableView>
+   </center>
+</BorderPane>
